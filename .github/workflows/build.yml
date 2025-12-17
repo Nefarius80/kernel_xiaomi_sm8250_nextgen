@@ -4,25 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       device:
-        description: '选择设备代号'
+        description: 'Выберите устройство'
         required: true
-        default: 'lmi'
+        default: 'umi'
         type: choice
         options:
-          - psyche
           - umi
-          - munch
-          - lmi
-          - cmi
-          - cas
-          - apollo
-          - alioth
-          - elish
-          - enuma
-          - dagu
-          - pipa
       include_ksu:
-        description: '是否包含KSU'
+        description: 'Интегрировать KSU'
         required: true
         default: 'true'
         type: choice
@@ -45,7 +34,7 @@ jobs:
         sudo apt update
         sudo apt install -y build-essential git curl wget bison flex zip bc cpio libssl-dev ccache python-is-python3 tar
 
-    # 生成短哈希（修复 substr() 报错）
+    # Сгенерировать короткий хеш (исправить ошибку substr() ）
     - name: Set short commit SHA
       id: vars
       run: echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
