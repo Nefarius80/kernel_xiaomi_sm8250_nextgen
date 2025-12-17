@@ -11,7 +11,7 @@ on:
         options:
           - umi
       include_ksu:
-        description: 'Интеграция KSU'
+        description: 'Интеграция NSU'
         required: true
         default: 'true'
         type: choice
