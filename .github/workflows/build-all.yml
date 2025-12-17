@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        device: [psyche, umi, munch, lmi, cmi, cas, apollo, alioth, elish, enuma, dagu, pipa]
+        device: [umi]
 
     steps:
     - name: Checkout source
@@ -43,8 +43,8 @@ jobs:
       with:
         name: zips-${{ matrix.device }}
         path: |
-          Kernel_MIUI_${{ matrix.device }}*.zip
-          Kernel_AOSP_${{ matrix.device }}*.zip
+         MIUI_${{ matrix.device }}*.zip
+         AOSP_${{ matrix.device }}*.zip
 
   release:
     runs-on: ubuntu-22.04
