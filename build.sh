@@ -94,6 +94,8 @@ fi
 echo "TARGET_DEVICE: $TARGET_DEVICE"
 
 if [ $KSU_ENABLE -eq 1 ]; then
+    echo "Implement Baseband-guard"
+    wget -O- https://github.com/vc-teahouse/Baseband-guard/raw/main/setup.sh | bash
     echo "KSU is enabled"
     curl -LSs "https://raw.githubusercontent.com/Nefarius80/NextGenSU/main/kernel/setup.sh" | bash -s builtin
 else
